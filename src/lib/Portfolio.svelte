@@ -306,8 +306,8 @@
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
-    background: #fffaf0;
-    color: #1d1d1f;
+    background: #f5f5f7;
+    color: #111827;
   }
 
   .layout {
@@ -316,15 +316,15 @@
   }
 
   .sidebar {
-    width: 360px;
-    background: linear-gradient(180deg, #5e8793, #4e707a);
-    color: #fff;
+    width: 340px;
+    background: #243766; /* deep slate */
+    color: #f9fafb;
     padding: 2.5rem 2rem;
     position: sticky;
     top: 0;
     align-self: flex-start;
     min-height: 100vh;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
+    border-right: 1px solid #1f2937;
     z-index: 10;
   }
 
@@ -339,8 +339,7 @@
     width: 62%;
     max-width: 220px;
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.65);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(148, 163, 184, 0.9);
     object-fit: cover;
   }
 
@@ -349,16 +348,16 @@
   }
 
   .name {
-    font-family: "Staatliches", system-ui;
-    font-size: 2.4rem;
-    letter-spacing: 0.04em;
-    margin: 0 0 0.5rem;
+    /* font-family: "Staatliches", system-ui; */
+    font-size: 2em;
+    /* letter-spacing: 0.1em; */
+    margin: 0 0 0.6rem;
   }
 
   .tagline {
     margin: 0 0 1.5rem;
-    font-size: 0.96rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.6;
     opacity: 0.9;
   }
 
@@ -372,29 +371,28 @@
   .nav-links a,
   .ghost-button {
     font-family: "Staatliches", system-ui;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    font-size: 0.82rem;
+    font-size: 1rem;
     border-radius: 999px;
-    padding: 0.65rem 1.2rem;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(249, 250, 251, 0.25);
+    background: transparent;
+    color: #f9fafb;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
     transition:
       background 150ms ease,
       transform 150ms ease,
-      box-shadow 150ms ease,
-      border-color 150ms ease;
+      border-color 150ms ease,
+      color 150ms ease;
   }
 
   .nav-links a:hover,
   .ghost-button:hover {
-    background: rgba(255, 255, 255, 0.18);
-    border-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    background: rgba(249, 250, 251, 0.08);
+    border-color: rgba(249, 250, 251, 0.6);
     transform: translateY(-1px);
   }
 
@@ -411,11 +409,11 @@
 
   .section-title {
     font-family: "Staatliches", system-ui;
-    font-size: 2.5rem;
-    letter-spacing: 0.08em;
+    font-size: 2.4rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     margin: 0 0 1.5rem;
-    color: #2b3138;
+    color: #111827;
     position: relative;
   }
 
@@ -424,37 +422,39 @@
     position: absolute;
     left: 0;
     bottom: -0.4rem;
-    width: 76px;
-    height: 3px;
+    width: 88px;
+    height: 2px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #da4167, transparent);
+    background: linear-gradient(90deg, #243766, transparent);
   }
 
   .projects {
     display: flex;
     flex-direction: column;
-    gap: 2.25rem;
+    gap: 1.9rem;
   }
 
   .project-card {
     cursor: pointer;
     border-radius: 1.25rem;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
     transition:
       transform 180ms ease,
-      box-shadow 180ms ease;
+      border-color 180ms ease,
+      background 180ms ease;
   }
 
   .project-card:focus-visible {
-    outline: 2px solid #da4167;
+    outline: 2px solid #243766;
     outline-offset: 3px;
   }
 
   .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 65px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+    border-color: #243766;
+    background: #f9fafb;
   }
 
   .video-wrapper {
@@ -468,11 +468,11 @@
     display: block;
     object-fit: cover;
     transform: scale(1);
-    transition: transform 200ms ease;
+    transition: transform 220ms ease;
   }
 
   .project-card:hover .video-wrapper video {
-    transform: scale(1);
+    transform: scale(1.02);
   }
 
   .overlay {
@@ -480,17 +480,16 @@
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.1) 15%,
-      rgba(0, 0, 0, 0.65) 80%,
-      rgba(0, 0, 0, 0.85) 100%
+      rgba(15, 23, 42, 0.05) 10%,
+      rgba(15, 23, 42, 0.8) 90%
     );
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 1.4rem 1.7rem;
-    color: #fff;
+    color: #f9fafb;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
     transition:
       opacity 200ms ease,
       transform 200ms ease;
@@ -504,8 +503,8 @@
   .overlay-text h3 {
     margin: 0 0 0.2rem;
     font-family: "Staatliches", system-ui;
-    font-size: clamp(1.4rem, 2vw, 1.8rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    letter-spacing: 0.16em;
     text-transform: uppercase;
   }
 
@@ -538,23 +537,24 @@
 
   .about-text p {
     margin: 0 0 1rem;
-    line-height: 1.65;
+    line-height: 1.7;
     font-size: 0.98rem;
+    color: #111827;
   }
 
   .contact {
-    margin: 1.5rem 0 1.5rem;
+    margin: 1.6rem 0 1.6rem;
     font-size: 0.95rem;
   }
 
   .contact a {
-    color: inherit;
+    color: #243766;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(37, 99, 235, 0.25);
   }
 
   .contact a:hover {
-    border-bottom-color: #da4167;
+    border-bottom-color: #243766;
   }
 
   .primary-button {
@@ -567,35 +567,34 @@
     cursor: pointer;
     font-family: "Staatliches", system-ui;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.85rem;
-    background: #da4167;
-    color: #fff;
+    letter-spacing: 0.18em;
+    font-size: 0.82rem;
+    background: #243766;
+    color: #f9fafb;
     transition:
       transform 150ms ease,
-      box-shadow 150ms ease,
       background 150ms ease;
   }
 
   .primary-button:hover {
     transform: translateY(-1px);
-    background: #c23358;
+    background: #1d4ed8;
   }
 
   .skills-panel {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 1.5rem;
+    background: #ffffff;
+    border-radius: 1.25rem;
     padding: 1.6rem 1.8rem;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(12px);
+    border: 1px solid #e5e7eb;
   }
 
   .skills-panel h3 {
     margin: 0 0 1rem;
     font-family: "Staatliches", system-ui;
-    font-size: 1.3rem;
-    letter-spacing: 0.12em;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: #111827;
   }
 
   .skills-grid {
@@ -606,11 +605,11 @@
 
   .skill-group h4 {
     margin: 0 0 0.35rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.16em;
     font-weight: 600;
-    color: #555;
+    color: #6b7280;
   }
 
   .skill-group ul {
@@ -619,11 +618,12 @@
     margin: 0;
     font-size: 0.88rem;
     line-height: 1.5;
+    color: #111827;
   }
 
   .skill-group li::before {
     content: "• ";
-    color: #da4167;
+    color: #243766;
   }
 
   /* Responsive */
@@ -635,10 +635,11 @@
 
     .sidebar {
       position: static;
-      width: 97%;
+      width: 100%;
       min-height: auto;
-      padding: 1.3rem 1.5rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      padding: 1.4rem 1.5rem;
+      border-right: none;
+      border-bottom: 1px solid #1f2937;
     }
 
     .sidebar-inner {
@@ -690,8 +691,8 @@
       opacity: 1;
       background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.1) 10%,
-        rgba(0, 0, 0, 0.85) 90%
+        rgba(15, 23, 42, 0.05) 10%,
+        rgba(15, 23, 42, 0.9) 90%
       );
     }
 
@@ -700,7 +701,7 @@
     }
 
     .section-title::after {
-      width: 60px;
+      width: 64px;
     }
   }
 </style>
