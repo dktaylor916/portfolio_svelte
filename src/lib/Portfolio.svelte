@@ -260,7 +260,7 @@
     <section id="portfolio" class="section">
       <h2 class="section-title">Selected Work</h2>
       <p>
-        The following examples highlight a mix of professional and personal
+        The following examples are a blend of professional and personal
         projects, covering frontend UI/UX, data analysis/management, and visual
         storytelling.
       </p>
