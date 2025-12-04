@@ -7,6 +7,10 @@
       tools: "Svelte · MongoDB · Mapbox GL · Python",
       video: "data/railinsights.mp4",
       url: "https://www.rail-insights.co.uk/",
+      role: "Lead Developer",
+      goal: "Provide Network Rail UK with an interactive dashboard to visualise outputs from their transport model",
+      outcome:
+        "Designed and built out both front and backend. Streamlined Network Rail's data communication for both external and internal use to help improve services",
     },
     {
       id: "climatezones",
@@ -15,103 +19,166 @@
       tools: "Svelte · D3 · Mapbox · Python",
       video: "data/climate-zones.mov",
       url: "https://pudding.cool/2024/06/climate-zones/",
+      role: "Lead Author / Developer",
+      goal: "Help non-technical readers understand how their city’s climate could shift under different emissions scenarios.",
+      outcome:
+        "Published as an interactive feature on The Pudding, an award-winning online data visualization publication.",
     },
     {
       id: "ua",
       title: "Urban Access",
-      subtitle: "",
+      subtitle:
+        "A web platform that lets planners instantly measure public transport accessibility, population density, and local amenities for 15-minute cities.",
       tools: "React · MongoDB · PostgreSQL · Python",
       video: "data/ua1.mov",
       url: "https://www.urbanaccess.io/",
+      role: "Lead Developer",
+      goal: "Build a self-serve accessibility analysis tool so municipalities and consultants can assess transport accessibility, population catchments, and amenity access without bespoke GIS workflows.",
+      outcome:
+        "Launched as a commercial web app with instant analysis, downloadable GTFS data, and shareable accessibility reports for urban planning teams.",
     },
+
     {
       id: "africa",
       title: "Climate Change in Africa",
-      subtitle: "",
+      subtitle:
+        "A scroll-driven story showing how warming reshapes Africa’s climate zones and shrinks familiar climate bands.",
       tools: "QGIS · Blender · JavaScript",
       video: "data/af_cli.mp4",
       url: "https://dktaylor916.github.io/climate_africa/",
+      role: "Lead Developer",
+      goal: "Visualise projected shifts in African climate zones using clear maps and animation for a general, non-technical audience.",
+      outcome:
+        "Published as a standalone explainer combining 3D renders and interactive maps to communicate regional climate risks.",
     },
     {
       id: "tdf",
       title: "Tour de France – Stage 17",
-      subtitle: "",
+      subtitle:
+        "An interactive map and elevation profile exploring one of the Tour de France’s key high-mountain stages.",
       tools: "QGIS · Mapbox · JavaScript",
       video: "data/tdf.mp4",
       url: "https://dktaylor916.github.io/tdf/",
+      role: "Lead Developer",
+      goal: "Experiment with race storytelling by mapping gradients, distance, and key segments along Stage 17 of the Tour.",
+      outcome:
+        "Created an explorable stage overview that links geography, elevation, and race context in a single interactive view.",
     },
     {
       id: "sl1",
       title: "Surfline 2022 – A Year in Review",
-      subtitle: "",
+      subtitle:
+        "An animated overview of global swell, storms, and standout events from Surfline’s 2022 surf year.",
       tools: "QGIS · Python",
       video: "data/sl-anim.mp4",
       url: "https://vimeo.com/842404323",
+      role: "Lead Developer",
+      goal: "Process and visualise a year of ocean and wave data to tell a coherent, visually engaging story for surfers.",
+      outcome:
+        "Delivered a motion-graphics piece used by Surfline to summarise and highlight the most memorable waves of 2022.",
     },
     {
       id: "sl2",
       title: "Surfline – How do tides affect our surf?",
-      subtitle: "",
+      subtitle:
+        "An interactive explainer that shows how changing tides affect wave quality across different surf breaks.",
       tools: "QGIS · Python · JavaScript · Mapbox",
       video: "data/sl-anim-app.mp4",
       url: "https://dktaylor916.github.io/sl-app/",
+      role: "Lead Developer",
+      goal: "Help surfers understand how tide windows shape surf conditions at their local spots using real data and intuitive visuals.",
+      outcome:
+        "Shipped as a browser-based tool that combines explorable maps and charts to link tides, bathymetry, and wave quality.",
     },
     {
       id: "fiets",
       title: "Accessibility of Bike Networks in Amsterdam",
-      subtitle: "",
+      subtitle:
+        "A scenario tool comparing how different bike network investments change access to jobs across the Amsterdam metropolitan region.",
       tools:
         "PostGIS · pgRouting · PostgreSQL · QGIS · JavaScript · D3 · Mapbox",
       video: "data/fietsaccess.mp4",
       url: "https://dktaylor916.github.io/mra_cycle_networks/",
+      role: "Lead Developer",
+      goal: "Support planners in testing reference, upgraded, and speed-pedelec bike network scenarios using 45-minute job accessibility as a metric.",
+      outcome:
+        "Built an interactive map where each origin shows how far you can travel and how many jobs you can reach under each network scenario.",
     },
     {
       id: "market",
       title: "A Brief Walk Through the History of Market Street",
-      subtitle: "",
+      subtitle:
+        "A story map tracing how San Francisco’s Market Street has evolved through changing transport, planning, and public space decisions.",
       tools: "JavaScript · Mapbox · QGIS",
       video: "data/market1.mp4",
       url: "https://dktaylor916.github.io/marketstreetfinal/",
+      role: "Lead Developer",
+      goal: "Combine archival material and modern geospatial data to show how Market Street’s form and function have shifted over time.",
+      outcome:
+        "Produced a scroll-based narrative with maps and context that lets readers visually compare historic and contemporary Market Street.",
     },
     {
       id: "ruimte",
       title: "Allocation of Public Space in the Netherlands",
-      subtitle: "",
+      subtitle:
+        "Interactive maps showing how public space is divided between cars, parking, cyclists, and pedestrians at neighbourhood, district, and city levels.",
       tools: "JavaScript · D3 · Mapbox · QGIS · PostGIS · PostgreSQL",
       video: "data/ruimte.mp4",
       url: "https://dktaylor916.github.io/nlruimte_v2/",
+      role: "Lead Developer",
+      goal: "Quantify who public space is really for in the Netherlands by classifying a national dataset and aggregating it by user and geography.",
+      outcome:
+        "Built a multi-scale dashboard that makes it easy to compare the share of space allocated to different modes across cities and neighbourhoods.",
     },
     {
       id: "liv",
       title: "Liverpool Footfall",
-      subtitle: "",
+      subtitle:
+        "An exploratory dashboard mapping how pedestrian activity varies across Liverpool’s streets over time.",
       tools: "QGIS · Python · JavaScript · Mapbox",
       video: "data/liv.mp4",
       url: "https://dktaylor916.github.io/bt_challenge/",
+      role: "Lead Developer",
+      goal: "Use telecom-derived footfall or sensor data to show when and where people use Liverpool’s city centre, with an emphasis on the high street.",
+      outcome:
+        "Delivered an interactive prototype that allows users to explore spatial and temporal patterns in city-centre footfall.",
     },
     {
       id: "police",
       title: "Police Violence at US Protests",
-      subtitle: "",
+      subtitle:
+        "A data-driven map and chart interface showing reported incidents of police violence at protests across the United States.",
       tools: "JavaScript · D3 · Python · QGIS · PostgreSQL · PostGIS",
       video: "data/police1.mp4",
       url: "https://dktaylor916.github.io/US-police-protest-violence/",
+      role: "Lead Developer",
+      goal: "Integrate protest-event and police use-of-force datasets to reveal where, when, and against whom violence occurred.",
+      outcome:
+        "Produced an explorable interface that lets users filter incidents by city, tactic, and outcome to better understand national patterns.",
     },
     {
       id: "ca",
       title: "How California Slowed Down",
-      subtitle: "",
+      subtitle:
+        "A long-form analysis of how vehicle miles traveled changed across California, particularly during the COVID-19 pandemic.",
       tools: "Python · QGIS",
       video: "data/ca_vmt.mp4",
       url: "https://dktaylor916.github.io/datavizblog/",
+      role: "Lead Developer",
+      goal: "Analyse mobility and traffic datasets to quantify how much, where, and for how long driving activity declined.",
+      outcome:
+        "Published as a web essay combining charts and maps to highlight regional differences in travel behaviour and recovery.",
     },
     {
       id: "maps",
       title: "Data Mapping Examples",
-      subtitle: "",
+      subtitle:
+        "A curated collection of thematic maps and spatial analyses built from open datasets and custom geoprocessing.",
       tools: "Python · QGIS · PostgreSQL · PostGIS",
       video: "data/maps.mp4",
       url: "https://dktaylor916.github.io/datamaps/",
+      role: "Lead Developer",
+      goal: "Experiment with geospatial pipelines and cartographic styles using Python, PostGIS, and QGIS across a variety of datasets.",
     },
   ];
 
@@ -192,7 +259,12 @@
     <!-- Portfolio -->
     <section id="portfolio" class="section">
       <h2 class="section-title">Selected Work</h2>
-
+      <p>
+        The following examples are a blend of professional and personal work.
+        They’ve been selected to showcase my GIS development skills, spanning
+        frontend UI/UX, backend infrastructure, and visual storytelling.
+      </p>
+      <p></p>
       <div class="projects">
         {#each projects as project}
           <article
@@ -216,9 +288,9 @@
               <div class="overlay">
                 <div class="overlay-text">
                   <h3>{project.title}</h3>
-                  {#if project.subtitle}
-                    <p class="subtitle">{project.subtitle}</p>
-                  {/if}
+
+                  <p class="tools"><span>Goal:</span> {project.goal}</p>
+                  <p class="tools"><span>Outcome:</span> {project.outcome}</p>
                   <p class="tools"><span>Tools:</span> {project.tools}</p>
                 </div>
               </div>
@@ -484,7 +556,7 @@
       rgba(15, 23, 42, 0.8) 90%
     );
     display: flex;
-    justify-content: flex-end;
+
     align-items: flex-end;
     padding: 1.4rem 1.7rem;
     color: #f9fafb;
@@ -503,9 +575,12 @@
   .overlay-text h3 {
     margin: 0 0 0.2rem;
     font-family: "Staatliches", system-ui;
-    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    font-size: 36px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
+  }
+  .overlay-text {
+    position: relative;
   }
 
   .subtitle {
@@ -516,12 +591,13 @@
 
   .tools {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 14px;
     opacity: 0.95;
   }
 
   .tools span {
     font-weight: 600;
+    font-size: 16px;
   }
 
   .about {
@@ -645,7 +721,6 @@
     .sidebar-inner {
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
       gap: 1.25rem;
     }
 
