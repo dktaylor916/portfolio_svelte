@@ -325,7 +325,6 @@
   <!-- Sidebar -->
   <aside class="sidebar" style={`width: ${side ? "275px" : "0px"}`}>
     <div class="sidebar-inner" style={`opacity: ${sideIn ? "1" : "0"}`}>
-      <h1>HI</h1>
       <img src="data/picweb.jpg" alt="Derek Taylor" class="avatar" />
 
       <div class="sidebar-text">
