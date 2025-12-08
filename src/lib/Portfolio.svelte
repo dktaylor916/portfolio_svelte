@@ -1,5 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  let side = false;
+  let sideIn = false;
+  let main = false;
   const projects = [
     {
       id: "railinsights",
@@ -256,6 +259,15 @@
     el?.scrollIntoView({ behavior: "smooth" });
   }
   onMount(() => {
+    setTimeout(() => {
+      side = true;
+    });
+    setTimeout(() => {
+      sideIn = true;
+    }, 350);
+    setTimeout(() => {
+      main = true;
+    }, 700);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -311,8 +323,8 @@
 
 <main class="layout">
   <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  <aside class="sidebar" style={`width: ${side ? "275px" : "0px"}`}>
+    <div class="sidebar-inner" style={`opacity: ${sideIn ? "1" : "0"}`}>
       <img src="data/picweb.jpg" alt="Derek Taylor" class="avatar" />
 
       <div class="sidebar-text">
@@ -406,7 +418,11 @@
   </aside>
 
   <!-- Main content -->
-  <section class="main">
+  <section
+    class="main"
+    class:is-visible={main}
+    style={`opacity: ${main ? "1" : "0"}`}
+  >
     <!-- Portfolio -->
     <section id="portfolio" class="section">
       <h2 class="section-title">Recent work</h2>
@@ -537,12 +553,13 @@
   }
 
   .sidebar {
-    width: 275px;
+    width: 0px;
     background: #e5f4fa;
     color: #00293f;
     padding: 1.5rem 2rem;
     position: sticky;
     top: 0;
+    transition: all 0.4s;
     align-self: flex-start;
     min-height: 100vh;
     z-index: 10;
@@ -553,6 +570,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1.75rem;
+    opacity: 0;
+    transition: all 0.5s;
   }
 
   .avatar {
@@ -629,6 +648,28 @@
     padding: 0.5rem 0.5rem;
     max-width: 1100px;
     margin: 0 auto;
+
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(6px);
+  }
+
+  /* Add this class when you want it to appear */
+  .main.is-visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+      filter: blur(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
   }
 
   .section {
