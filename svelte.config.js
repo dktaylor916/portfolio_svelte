@@ -10,9 +10,9 @@ const config = {
 			assets: 'build',
 			fallback: '404.html'
 		}),
-		paths: {
-			base: dev ? '' : '/portfolio_svelte'
-		}
+		// paths: {
+		// 	base: dev ? '' : '/portfolio_svelte'
+		// }
 	}
 };
 
