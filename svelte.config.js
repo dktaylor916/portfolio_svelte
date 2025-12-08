@@ -8,7 +8,7 @@ const config = {
 		adapter: adapter({
 			pages: 'build',     // 👈 output folder for gh-pages
 			assets: 'build',
-			fallback: '404.html'
+			fallback: 'index.html'
 		}),
 		// paths: {
 		// 	base: dev ? '' : '/portfolio_svelte'
