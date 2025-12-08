@@ -977,6 +977,7 @@
     font-weight: 600;
     white-space: nowrap; /* never wrap */
     overflow: hidden; /* optional */
+    font-size: 20px;
     text-overflow: ellipsis; /* optional: show "..." if too long */
   }
   .role {
@@ -994,7 +995,7 @@
     font-weight: 300;
     margin-left: 0.4rem;
     color: #111827;
-    font-size: 12px;
+    font-size: 13px;
   }
   .project-info {
     display: grid;
