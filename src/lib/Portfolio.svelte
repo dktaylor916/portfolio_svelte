@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   const projects = [
     {
       id: "railinsights",
       title: "Rail Insights",
-      subtitle: "",
+      subtitle:
+        "Interactive rail modelling dashboard streamlining Network Rail’s data visualization and communication",
       tools: "Svelte · MongoDB · Mapbox GL · Python",
       video: "data/railinsights.mp4",
       url: "https://www.rail-insights.co.uk/",
@@ -11,24 +13,27 @@
       goal: "Provide Network Rail UK with an interactive dashboard to visualise outputs from their transport model",
       outcome:
         "Designed and built out both front and backend. Streamlined Network Rail's data communication for both external and internal use to help improve services",
+      year: "2025",
     },
     {
       id: "climatezones",
       title: "Climate Zones",
-      subtitle: "",
+      subtitle:
+        "Interactive data story showing how city climates could shift under emissions scenarios. Produced for The Pudding, an award winning online publication",
       tools: "Svelte · D3 · Mapbox · Python",
       video: "data/climate-zones.mov",
       url: "https://pudding.cool/2024/06/climate-zones/",
-      role: "Lead Author / Developer",
+      role: "Author / Lead Developer",
       goal: "Help non-technical readers understand how their city’s climate could shift under different emissions scenarios.",
       outcome:
         "Published as an interactive feature on The Pudding, an award-winning online data visualization publication.",
+      year: "2024",
     },
     {
       id: "ua",
       title: "Urban Access",
       subtitle:
-        "A web platform that lets planners instantly measure public transport accessibility, population density, and local amenities for 15-minute cities.",
+        "A web platform that lets planners instantly measure public transport accessibility, population density, and local amenities for 15-minute cities",
       tools: "React · MongoDB · PostgreSQL · Python",
       video: "data/ua1.mov",
       url: "https://www.urbanaccess.io/",
@@ -36,13 +41,14 @@
       goal: "Build a self-serve accessibility analysis tool so municipalities and consultants can assess transport accessibility, population catchments, and amenity access without bespoke GIS workflows.",
       outcome:
         "Launched as a commercial web app with instant analysis, downloadable GTFS data, and shareable accessibility reports for urban planning teams.",
+      year: "2024",
     },
 
     {
       id: "africa",
       title: "Climate Change in Africa",
       subtitle:
-        "A scroll-driven story showing how warming reshapes Africa’s climate zones and shrinks familiar climate bands.",
+        "A 3D rendered data viz showing how warming reshapes Africa’s climate zones and shrinks temperate climate bands",
       tools: "QGIS · Blender · JavaScript",
       video: "data/af_cli.mp4",
       url: "https://dktaylor916.github.io/climate_africa/",
@@ -50,12 +56,13 @@
       goal: "Visualise projected shifts in African climate zones using clear maps and animation for a general, non-technical audience.",
       outcome:
         "Published as a standalone explainer combining 3D renders and interactive maps to communicate regional climate risks.",
+      year: "2023",
     },
     {
       id: "tdf",
       title: "Tour de France – Stage 17",
       subtitle:
-        "An interactive map and elevation profile exploring one of the Tour de France’s key high-mountain stages.",
+        "An interactive map and elevation profile exploring one of the Tour de France’s key high-mountain stages",
       tools: "QGIS · Mapbox · JavaScript",
       video: "data/tdf.mp4",
       url: "https://dktaylor916.github.io/tdf/",
@@ -63,12 +70,13 @@
       goal: "Experiment with race storytelling by mapping gradients, distance, and key segments along Stage 17 of the Tour.",
       outcome:
         "Created an explorable stage overview that links geography, elevation, and race context in a single interactive view.",
+      year: "2023",
     },
     {
       id: "sl1",
       title: "Surfline 2022 – A Year in Review",
       subtitle:
-        "An animated overview of global swell, storms, and standout events from Surfline’s 2022 surf year.",
+        "A motion-graphics piece used by Surfline to summarise and highlight the most memorable moments from Bantham Bay 2022",
       tools: "QGIS · Python",
       video: "data/sl-anim.mp4",
       url: "https://vimeo.com/842404323",
@@ -76,12 +84,13 @@
       goal: "Process and visualise a year of ocean and wave data to tell a coherent, visually engaging story for surfers.",
       outcome:
         "Delivered a motion-graphics piece used by Surfline to summarise and highlight the most memorable waves of 2022.",
+      year: "2023",
     },
     {
       id: "sl2",
       title: "Surfline – How do tides affect our surf?",
       subtitle:
-        "An interactive explainer that shows how changing tides affect wave quality across different surf breaks.",
+        "An interactive explorer that shows how changing tides affect wave takeoffs",
       tools: "QGIS · Python · JavaScript · Mapbox",
       video: "data/sl-anim-app.mp4",
       url: "https://dktaylor916.github.io/sl-app/",
@@ -89,6 +98,7 @@
       goal: "Help surfers understand how tide windows shape surf conditions at their local spots using real data and intuitive visuals.",
       outcome:
         "Shipped as a browser-based tool that combines explorable maps and charts to link tides, bathymetry, and wave quality.",
+      year: "2023",
     },
     {
       id: "fiets",
@@ -103,6 +113,7 @@
       goal: "Support planners in testing reference, upgraded, and speed-pedelec bike network scenarios using 45-minute job accessibility as a metric.",
       outcome:
         "Built an interactive map where each origin shows how far you can travel and how many jobs you can reach under each network scenario.",
+      year: "2022",
     },
     {
       id: "market",
@@ -116,6 +127,7 @@
       goal: "Combine archival material and modern geospatial data to show how Market Street’s form and function have shifted over time.",
       outcome:
         "Produced a scroll-based narrative with maps and context that lets readers visually compare historic and contemporary Market Street.",
+      year: "2022",
     },
     {
       id: "ruimte",
@@ -129,6 +141,7 @@
       goal: "Quantify who public space is really for in the Netherlands by classifying a national dataset and aggregating it by user and geography.",
       outcome:
         "Built a multi-scale dashboard that makes it easy to compare the share of space allocated to different modes across cities and neighbourhoods.",
+      year: "2022",
     },
     {
       id: "liv",
@@ -142,6 +155,7 @@
       goal: "Use telecom-derived footfall or sensor data to show when and where people use Liverpool’s city centre, with an emphasis on the high street.",
       outcome:
         "Delivered an interactive prototype that allows users to explore spatial and temporal patterns in city-centre footfall.",
+      year: "2023",
     },
     {
       id: "police",
@@ -155,6 +169,7 @@
       goal: "Integrate protest-event and police use-of-force datasets to reveal where, when, and against whom violence occurred.",
       outcome:
         "Produced an explorable interface that lets users filter incidents by city, tactic, and outcome to better understand national patterns.",
+      year: "2021",
     },
     {
       id: "ca",
@@ -168,6 +183,7 @@
       goal: "Analyse mobility and traffic datasets to quantify how much, where, and for how long driving activity declined.",
       outcome:
         "Published as a web essay combining charts and maps to highlight regional differences in travel behaviour and recovery.",
+      year: "2021",
     },
     {
       id: "maps",
@@ -179,6 +195,7 @@
       url: "https://dktaylor916.github.io/datamaps/",
       role: "Lead Developer",
       goal: "Experiment with geospatial pipelines and cartographic styles using Python, PostGIS, and QGIS across a variety of datasets.",
+      year: "2021",
     },
   ];
 
@@ -214,19 +231,81 @@
   function openExternal(url: any) {
     window.open(url, "_blank", "noopener,noreferrer");
   }
-  function playVideoFromWrapper(e: MouseEvent) {
-    const wrapper = e.currentTarget as HTMLElement;
-    const vid = wrapper.querySelector("video") as HTMLVideoElement | null;
-    vid?.play();
-  }
+  // function playVideoFromWrapper(e: MouseEvent) {
+  //   const wrapper = e.currentTarget as HTMLElement;
+  //   const vid = wrapper.querySelector("video") as HTMLVideoElement | null;
+  //   vid?.play();
+  // }
 
-  function resetVideoFromWrapper(e: MouseEvent) {
-    const wrapper = e.currentTarget as HTMLElement;
-    const vid = wrapper.querySelector("video") as HTMLVideoElement | null;
-    if (vid) {
-      vid.pause();
-      vid.currentTime = 0;
-    }
+  // function resetVideoFromWrapper(e: MouseEvent) {
+  //   const wrapper = e.currentTarget as HTMLElement;
+  //   const vid = wrapper.querySelector("video") as HTMLVideoElement | null;
+  //   if (vid) {
+  //     vid.pause();
+  //     vid.currentTime = 0;
+  //   }
+  // }
+
+  const sections = ["portfolio", "about"];
+
+  let activeSection = "portfolio"; // default
+
+  function scrollToSection(id: string) {
+    activeSection = id;
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth" });
+  }
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            activeSection = entry.target.id; // update based on scroll
+          }
+        });
+      },
+      {
+        threshold: 0.1, // section considered active when 60% in view
+      }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  });
+  function autoplayOnFullView(node: HTMLVideoElement) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target as HTMLVideoElement;
+
+          if (entry.intersectionRatio > 0.75) {
+            // Fully in view → play
+            video.play();
+          } else {
+            // Not fully in view → stop and restart
+            video.pause();
+            video.currentTime = 0;
+          }
+        }
+      },
+      {
+        // 1.0 means the element must be 100% inside the viewport
+        threshold: 0.75,
+      }
+    );
+
+    observer.observe(node);
+
+    return {
+      destroy() {
+        observer.unobserve(node);
+        observer.disconnect();
+      },
+    };
   }
 </script>
 
@@ -237,65 +316,139 @@
       <img src="data/picweb.jpg" alt="Derek Taylor" class="avatar" />
 
       <div class="sidebar-text">
-        <h1 class="name">Hi, I'm Derek Taylor.</h1>
+        <h1 class="name">Derek Taylor</h1>
+        <br />
         <p class="tagline">
-          GIS developer &amp; data viz specialist.<br />
-          Discovering the world, one map at a time.
+          GIS developer and data-viz specialist. Discovering the world, one map
+          at a time.
         </p>
-
-        <nav class="nav-links">
-          <a href="#portfolio">Portfolio</a>
-          <a href="#about">About</a>
-          <button class="ghost-button" on:click={() => openExternal(cvPath)}>
-            Download CV
-          </button>
-        </nav>
+        <div class="contact">
+          <p>
+            <a
+              href="mailto:dktaylor916@gmail.com"
+              style="display:inline-flex; align-items:center; gap:6px;"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="14"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="2"
+                />
+                <polyline
+                  points="3,7 12,13 21,7"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="2"
+                />
+              </svg>
+              dktaylor916@gmail.com
+            </a>
+          </p>
+          <p>
+            <a
+              href="tel:+447700900123"
+              style="display:inline-flex; align-items:center; gap:6px;"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3l2.5.8c.4.1.7.5.7.9V20
+           c0 1.1-.9 2-2 2C9.8 22 2 14.2 2 4c0-1.1.9-2 2-2h3.3c.4 0 .8.3.9.7l.8 2.5c.1.4 0 .9-.3 1.2L6.6 10.8z"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              +44 7700 900123
+            </a>
+          </p>
+        </div>
       </div>
     </div>
+  </aside>
+  <aside class="nav">
+    <nav class="nav-links">
+      <a
+        href="#portfolio"
+        class:active={activeSection === "portfolio"}
+        on:click|preventDefault={() => scrollToSection("portfolio")}
+      >
+        Work
+      </a>
+
+      <a
+        href="#about"
+        class:active={activeSection === "about"}
+        on:click|preventDefault={() => scrollToSection("about")}
+      >
+        About Me
+      </a>
+
+      <button class="ghost-button" on:click={() => openExternal(cvPath)}>
+        View CV
+      </button>
+    </nav>
   </aside>
 
   <!-- Main content -->
   <section class="main">
     <!-- Portfolio -->
     <section id="portfolio" class="section">
-      <h2 class="section-title">Selected Work</h2>
-      <p>
-        The following examples are a blend of professional and personal
-        projects, covering frontend UI/UX, data analysis/management, and visual
-        storytelling.
-      </p>
-      <p></p>
+      <h2 class="section-title">Recent work</h2>
+
       <div class="projects">
         {#each projects as project}
+          <div class="project-divider" aria-hidden="true"></div>
+          <div class="project-info">
+            <span class="title">{project.title}</span>
+            <span class="sub">{project.subtitle}</span>
+            <span class="year">{project.year}</span>
+          </div>
+
           <article
             class="project-card"
             on:click={() => openExternal(project.url)}
             tabindex="0"
           >
-            <div
-              class="video-wrapper"
-              on:mouseenter={playVideoFromWrapper}
-              on:mouseleave={resetVideoFromWrapper}
-            >
+            <div class="video-wrapper">
               <video
                 src={project.video}
                 muted
                 loop
                 playsinline
                 preload="metadata"
+                use:autoplayOnFullView
               ></video>
-
               <div class="overlay">
-                <div class="overlay-text">
-                  <h3>{project.title}</h3>
-
+                <!-- <div class="overlay-text">
                   <p class="tools"><span>Goal:</span> {project.goal}</p>
                   <p class="tools"><span>Outcome:</span> {project.outcome}</p>
                   <p class="tools"><span>Tools:</span> {project.tools}</p>
-                </div>
+                </div> -->
               </div>
             </div>
           </article>
+          <div class="project-info">
+            <span class="tools"><b>Tools:</b> {project.tools}</span>
+            <span class="role"><b>Role:</b> {project.role}</span>
+          </div>
+
+          <br />
         {/each}
       </div>
     </section>
@@ -340,10 +493,6 @@
             </p>
             <p><strong>Tel:</strong> +44 (0)7724 113 738</p>
           </div>
-
-          <button class="primary-button" on:click={() => openExternal(cvPath)}>
-            Download CV
-          </button>
         </div>
 
         <div class="skills-panel">
@@ -367,18 +516,18 @@
 </main>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Staatliches&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
   :global(body) {
     margin: 0;
     font-family:
-      "Montserrat",
+      "Inter",
       system-ui,
       -apple-system,
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
-    background: #f5f5f7;
+    background: white;
     color: #111827;
   }
 
@@ -388,15 +537,14 @@
   }
 
   .sidebar {
-    width: 340px;
-    background: #243766; /* deep slate */
-    color: #f9fafb;
-    padding: 2.5rem 2rem;
+    width: 275px;
+    background: #e5f4fa;
+    color: #00293f;
+    padding: 1.5rem 2rem;
     position: sticky;
     top: 0;
     align-self: flex-start;
     min-height: 100vh;
-    border-right: 1px solid #1f2937;
     z-index: 10;
   }
 
@@ -408,31 +556,39 @@
   }
 
   .avatar {
-    width: 62%;
-    max-width: 220px;
-    border-radius: 50%;
-    border: 2px solid rgba(148, 163, 184, 0.9);
+    width: 85%;
+    height: 250px;
+
+    border-radius: 6%;
     object-fit: cover;
   }
 
   .sidebar-text {
-    text-align: center;
+    text-align: left;
   }
 
   .name {
-    /* font-family: "Staatliches", system-ui; */
-    font-size: 2em;
-    /* letter-spacing: 0.1em; */
+    font-size: 40px;
+    font-weight: 900;
     margin: 0 0 0.6rem;
   }
 
   .tagline {
     margin: 0 0 1.5rem;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 20px;
+    font-weight: 300;
     opacity: 0.9;
   }
-
+  .nav {
+    width: 90px;
+    color: #00293f;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    min-height: 100vh;
+    z-index: 10;
+  }
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -442,23 +598,23 @@
 
   .nav-links a,
   .ghost-button {
-    font-family: "Staatliches", system-ui;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-size: 1rem;
-    border-radius: 999px;
-    padding: 0.6rem 1.2rem;
+    font-size: 14px;
+    padding: 5px 5px;
     border: 1px solid rgba(249, 250, 251, 0.25);
+    font-weight: 600;
     background: transparent;
-    color: #f9fafb;
+    color: #a0dbed;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
     transition:
       background 150ms ease,
       transform 150ms ease,
       border-color 150ms ease,
       color 150ms ease;
+  }
+  .nav-links a.active {
+    color: #000; /* #00293F when clicked / active section */
   }
 
   .nav-links a:hover,
@@ -470,47 +626,37 @@
 
   .main {
     flex: 1;
-    padding: 2.5rem 3.5rem;
+    padding: 0.5rem 0.5rem;
     max-width: 1100px;
     margin: 0 auto;
   }
 
   .section {
     margin-bottom: 4rem;
+    margin-right: 115px;
   }
 
   .section-title {
-    font-family: "Staatliches", system-ui;
-    font-size: 2.4rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin: 0 0 1.5rem;
+    font-size: 26px;
+    font-weight: 600;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    margin: 0 0 0.5rem;
     color: #111827;
     position: relative;
-  }
-
-  .section-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.4rem;
-    width: 88px;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #243766, transparent);
   }
 
   .projects {
     display: flex;
     flex-direction: column;
-    gap: 1.9rem;
+    gap: 0.8rem;
   }
 
   .project-card {
     cursor: pointer;
-    border-radius: 1.25rem;
+    border-radius: 20px;
     overflow: hidden;
-    background: #ffffff;
+    background: #e5f4fa;
     border: 1px solid #e5e7eb;
     transition:
       transform 180ms ease,
@@ -546,15 +692,16 @@
   .project-card:hover .video-wrapper video {
     transform: scale(1.02);
   }
+  .project-divider {
+    height: 1px;
+    background: #111827;
+    margin-top: 0;
+  }
 
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(15, 23, 42, 0.05) 10%,
-      rgba(15, 23, 42, 0.8) 90%
-    );
+
     display: flex;
 
     align-items: flex-end;
@@ -574,7 +721,7 @@
 
   .overlay-text h3 {
     margin: 0 0 0.2rem;
-    font-family: "Staatliches", system-ui;
+
     font-size: 36px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -641,7 +788,6 @@
     border-radius: 999px;
     border: none;
     cursor: pointer;
-    font-family: "Staatliches", system-ui;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-size: 0.82rem;
@@ -658,7 +804,7 @@
   }
 
   .skills-panel {
-    background: #ffffff;
+    background: #e5f4fa;
     border-radius: 1.25rem;
     padding: 1.6rem 1.8rem;
     border: 1px solid #e5e7eb;
@@ -666,7 +812,6 @@
 
   .skills-panel h3 {
     margin: 0 0 1rem;
-    font-family: "Staatliches", system-ui;
     font-size: 1.2rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -703,7 +848,7 @@
   }
 
   /* Responsive */
-
+  /* 
   @media (max-width: 960px) {
     .layout {
       flex-direction: column;
@@ -778,5 +923,45 @@
     .section-title::after {
       width: 64px;
     }
+  } */
+
+  .year {
+    text-align: right;
+    font-weight: 300;
+    color: #52a9c4;
+    font-size: 12px;
+    position: relative;
+  }
+  .title {
+    font-weight: 600;
+    white-space: nowrap; /* never wrap */
+    overflow: hidden; /* optional */
+    text-overflow: ellipsis; /* optional: show "..." if too long */
+  }
+  .role {
+    font-weight: 300;
+    color: #52a9c4;
+    text-align: right;
+    font-size: 12px;
+  }
+  .tools {
+    font-weight: 300;
+    color: #52a9c4;
+    font-size: 12px;
+  }
+  .sub {
+    font-weight: 300;
+    margin-left: 0.4rem;
+    color: #111827;
+    font-size: 12px;
+  }
+  .project-info {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) auto;
+    column-gap: 0.5rem; /* gap between title ↔ subtitle, and subtitle ↔ year */
+    align-items: center;
+  }
+  .project-main {
+    flex: 1 1 auto; /* take all space that isn’t needed by the year */
   }
 </style>
