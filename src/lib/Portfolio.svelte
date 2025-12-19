@@ -289,23 +289,35 @@
     return () => observer.disconnect();
   });
   function autoplayOnFullView(node: HTMLVideoElement) {
+    let playTimeout: ReturnType<typeof setTimeout> | null = null;
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           const video = entry.target as HTMLVideoElement;
 
           if (entry.intersectionRatio > 0.75) {
-            // Fully in view → play
-            video.play();
+            // Clear any previous timer and start a new delayed play
+            if (playTimeout) clearTimeout(playTimeout);
+
+            playTimeout = setTimeout(() => {
+              video.play().catch(() => {
+                // ignore autoplay errors
+              });
+            }, 500); // 1s delay
           } else {
-            // Not fully in view → stop and restart
+            // Out of view enough → cancel pending play and reset
+            if (playTimeout) {
+              clearTimeout(playTimeout);
+              playTimeout = null;
+            }
+
             video.pause();
             video.currentTime = 0;
           }
         }
       },
       {
-        // 1.0 means the element must be 100% inside the viewport
         threshold: 0.75,
       }
     );
@@ -314,6 +326,7 @@
 
     return {
       destroy() {
+        if (playTimeout) clearTimeout(playTimeout);
         observer.unobserve(node);
         observer.disconnect();
       },
@@ -975,10 +988,10 @@
   }
   .title {
     font-weight: 600;
-    white-space: nowrap; /* never wrap */
-    overflow: hidden; /* optional */
+
     font-size: 20px;
-    text-overflow: ellipsis; /* optional: show "..." if too long */
+
+    max-width: 200px;
   }
   .role {
     font-weight: 300;
