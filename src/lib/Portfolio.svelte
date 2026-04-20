@@ -46,6 +46,20 @@
         "Launched as a commercial web app with instant analysis, downloadable GTFS data, and shareable accessibility reports for urban planning teams.",
       year: "2024",
     },
+    {
+      id: "vibrancy",
+      title: "Vibrancy Hours",
+      subtitle:
+        "An interactive tool that maps the busiest hours of the day across US neighbourhoods using opening hours",
+      tools: "MapLibre · H3 · Python",
+      video: "data/vibrancy.mov",
+      url: "https://dktaylor916.github.io/vibrancy-hours/?city=nyc",
+      role: "Lead Developer",
+      goal: "Let users explore when and where different parts of a city come alive, revealing temporal rhythms of urban activity.",
+      outcome:
+        "Published as an interactive web tool allowing users to compare foot traffic patterns across US neighbourhoods by time of day.",
+      year: "2026",
+    },
 
     {
       id: "africa",
