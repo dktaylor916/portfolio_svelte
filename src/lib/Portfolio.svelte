@@ -5,13 +5,26 @@
   let main = false;
   const projects = [
     {
+      id: "urbanintelligence",
+      title: "Urban Intelligence",
+      subtitle:
+        "A research platform giving Gensler’s researchers and design leaders direct access to city and building level analysis, census data, and location intelligence",
+      tools: "React · Mapbox GL · Python · DuckDB · H3 · PMTiles",
+      video: "data/UI.mp4",
+      speed: 1.5,
+      role: "Lead Engineer / Project Manager",
+      goal: "Put built environment metrics for 70+ global cities in the hands of researchers and designers without needing GIS expertise.",
+      outcome:
+        "Shipped as an internal web app backed by a vector tile pipeline serving 30+ GB of Overture Maps and parcel data to the browser.",
+      year: "2026",
+    },
+    {
       id: "railinsights",
       title: "Rail Insights",
       subtitle:
         "Interactive rail modelling dashboard streamlining Network Rail’s data visualization and communication",
       tools: "Svelte · MongoDB · Mapbox GL · Python",
       video: "data/railinsights.mp4",
-      url: "https://www.rail-insights.co.uk/",
       role: "Lead Developer",
       goal: "Provide Network Rail UK with an interactive dashboard to visualise outputs from their transport model",
       outcome:
@@ -39,7 +52,6 @@
         "A web platform that lets planners instantly measure public transport accessibility, population density, and local amenities for 15-minute cities",
       tools: "React · MongoDB · PostgreSQL · Python",
       video: "data/ua1.mov",
-      url: "https://www.urbanaccess.io/",
       role: "Lead Developer",
       goal: "Build a self-serve accessibility analysis tool so municipalities and consultants can assess transport accessibility, population catchments, and amenity access without bespoke GIS workflows.",
       outcome:
@@ -218,24 +230,44 @@
 
   const skills = [
     {
-      title: "GIS",
-      items: ["QGIS", "ArcGIS"],
+      title: "Programming",
+      items: ["Python", "TypeScript", "JavaScript", "SQL", "HTML / CSS"],
     },
     {
-      title: "DB Management",
-      items: ["MongoDB", "PostgreSQL", "PostGIS"],
+      title: "Geospatial & Routing",
+      items: [
+        "GeoPandas",
+        "DuckDB",
+        "PostGIS",
+        "H3",
+        "OpenTripPlanner",
+        "GTFS",
+        "OpenStreetMap",
+        "Overture Maps",
+        "QGIS / ESRI",
+      ],
     },
     {
-      title: "Python",
-      items: ["GeoPandas", "Pandas", "TensorFlow", "Scikit-learn"],
+      title: "Web & Visualization",
+      items: [
+        "React",
+        "Svelte",
+        "D3",
+        "Mapbox GL JS",
+        "MapLibre GL JS",
+        "Tippecanoe / PMTiles",
+        "Figma",
+      ],
     },
     {
-      title: "JavaScript",
-      items: ["Svelte", "D3", "React", "Leaflet", "Mapbox"],
-    },
-    {
-      title: "Adobe Suite",
-      items: ["InDesign", "Illustrator", "Premiere Pro", "After Effects"],
+      title: "Data & Tools",
+      items: [
+        "PostgreSQL",
+        "MongoDB",
+        "pandas",
+        "Git / GitHub",
+        "AI coding tools",
+      ],
     },
     {
       title: "Languages",
@@ -358,7 +390,7 @@
         <h1 class="name">Derek Taylor</h1>
         <br />
         <p class="tagline">
-          GIS developer and data-viz specialist. Discovering the world, one map
+          Geospatial Software Engineer. Discovering the world, one map
           at a time.
         </p>
         <div class="contact">
@@ -394,7 +426,7 @@
           </p>
           <p>
             <a
-              href="tel:+447724113738"
+              href="tel:+19162143505"
               style="display:inline-flex; align-items:center; gap:6px;"
             >
               <svg
@@ -413,7 +445,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              +44 7724 113738
+              +1 (916) 214 3505
             </a>
           </p>
         </div>
@@ -465,8 +497,9 @@
 
           <article
             class="project-card"
-            on:click={() => openExternal(project.url)}
-            tabindex="0"
+            class:static={!project.url}
+            on:click={() => project.url && openExternal(project.url)}
+            tabindex={project.url ? 0 : -1}
           >
             <div class="video-wrapper">
               <video
@@ -475,6 +508,7 @@
                 loop
                 playsinline
                 preload="metadata"
+                on:play={(e) => (e.currentTarget.playbackRate = project.speed ?? 1)}
                 use:autoplayOnFullView
               ></video>
               <div class="overlay">
@@ -503,30 +537,19 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I’m a full-stack GIS developer and data visualization specialist
-            with over eight years of professional experience. I focus on
-            transforming complex data into clear, actionable insights and
-            communicating results to both technical and non-technical audiences.
+            I build maps and the systems behind them. I trained as a city
+            planner at UC Berkeley, and for the past eight years I’ve been
+            writing software that helps planners, researchers, and designers
+            understand how cities work. Right now I do that at the Gensler
+            Research Institute in New York.
           </p>
           <p>
-            My work spans cleaning and maintaining large datasets, building
-            backend data pipelines and APIs, and developing compelling frontend
-            interactive visualizations.
+            I’m happiest where data meets storytelling, turning spreadsheets
+            into something people actually want to explore.
           </p>
           <p>
-            When I’m not making maps for work, I’m making maps for side
-            projects, conducting open-source investigations, and exploring the
-            world through numbers and visualizations. I’ve used big datasets to
-            uncover stories and provide clear and concise information to
-            municipalities, stakeholders, and non-profits. I’m especially
-            interested in the
-            <strong>intersection of data and journalism</strong>, using dynamic,
-            interactive visualizations to bring static spreadsheets and text to
-            life.
-          </p>
-          <p>
-            After I close the computer for the day, you can find me biking into
-            headwinds, playing drums, and jumping into cold bodies of water.
+            Away from the computer, you’ll find me biking into headwinds,
+            playing drums, or jumping into cold bodies of water.
           </p>
 
           <div class="contact">
@@ -534,7 +557,7 @@
               <strong>Mail:</strong>
               <a href="mailto:dktaylor916@gmail.com">dktaylor916@gmail.com</a>
             </p>
-            <p><strong>Tel:</strong> +44 (0)7724 113 738</p>
+            <p><strong>Tel:</strong> +1 (916) 214 3505</p>
           </div>
         </div>
 
@@ -741,6 +764,20 @@
     transform: translateY(-2px);
     border-color: #243766;
     background: #f9fafb;
+  }
+
+  .project-card.static {
+    cursor: default;
+  }
+
+  .project-card.static:hover {
+    transform: none;
+    border-color: #e5e7eb;
+    background: #e5f4fa;
+  }
+
+  .project-card.static:hover .video-wrapper video {
+    transform: none;
   }
 
   .video-wrapper {
